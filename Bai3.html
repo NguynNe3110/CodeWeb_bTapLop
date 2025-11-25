@@ -1,54 +1,75 @@
 <head>
-    <title>Quản lý sinh viên</title>
+  <title>Quản lý sinh viên</title>
+
+  <style>
+    thead th {
+      background-color: aquamarine;
+    }
+
+    .nguyen {
+      background-color: yellow;
+      color: red;
+    }
+
+    .nguye {
+      background-color: aquamarine;
+      text-align: center;
+    }
+
+    tbody td {
+      font-weight: bold;
+    }
+  </style>
 </head>
-<h2>QUẢN LÝ SINH VIÊN</h2>
-<table border="1">
+<body style="background-color: rgb(216, 255, 178)">
+  <h2>QUẢN LÝ SINH VIÊN</h2>
+  <table border="1">
     <thead>
-        <tr>
-            <th>ID</th>
-            <th>Họ và tên</th>
-            <th>Điểm</th>
-            <th>Xếp loại</th>
-        </tr>
+      <tr>
+        <th>ID</th>
+        <th>Họ và tên</th>
+        <th>Điểm</th>
+        <th>Xếp loại</th>
+      </tr>
     </thead>
     <tbody>
-        <tr>
-            <td colspan="4">Khóa A</td>
-        </tr>
-        <tr>
-            <td>1</td>
-            <td>Trần Tiến Tài</td>
-            <td>7</td>
-            <td rowspan="2">Khá</td>
-        </tr>
-        <tr>
-            <td>2</td>
-            <td>Phạm Mạnh Khoa</td>
-            <td>8</td>
-        </tr>
-        
-        <tr>
-            <td colspan="4">Khóa B</td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Trần Văn Hưng</td>
-            <td>5</td>
-            <td>Trung bình</td>
-        </tr>
-        <tr>
-            <td>4</td>
-            <td>Đỗ Đức Thành</td>
-            <td>10</td>
-            <td>Giỏi</td>
-        </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="2">Tổng cộng</td>
-                <td>7.5</td>
-                <td>Khá</td>
-            </tr>
-        </tfoot>
-       
-</table>
+      <tr>
+        <td colspan="4" class="nguyen">Khóa A</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Trần Tiến Tài</td>
+        <td>7</td>
+        <td rowspan="2" class="nguyen">Khá</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Phạm Mạnh Khoa</td>
+        <td>8</td>
+      </tr>
+
+      <tr>
+        <td colspan="4" class="nguye">Khóa B</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Trần Văn Hưng</td>
+        <td class="nguyen">5</td>
+        <td>Trung bình</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Đỗ Đức Thành</td>
+        <td>10</td>
+        <td class="nguyen">Giỏi</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2" class="nguye">Tổng cộng</td>
+        <td>7.5</td>
+        <td class="nguye">Khá</td>
+      </tr>
+    </tfoot>
+  </table>
+</body>
