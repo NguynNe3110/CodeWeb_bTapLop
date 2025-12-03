@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body {
+    background: #ffffff;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+.container {
+    width: 400px;
+    background: #000;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #aaa;
+}
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 6px;
+    color: #fff;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    grid-column: span 2;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.checkbox-text {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.btn {
+    grid-column: span 2;
+    background: #d20000;
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: .2s;
+}
+.btn:hover {
+    background: #ff0000;
+}
+.note-text,
+#idselect,
+#note,
+.btn {
+    grid-column: span 2;
+}
+
+    </style>
+</head>
+    
+
+<body id="background9">
+    <div class="container">
+        <h2 id="head">Đăng Ký Tài Khoản</h2>
+
+<form id="formdangki">
+    <input type="text" id="firstname" name="firstname" placeholder="Tên" />
+    <input type="text" id="lastname" name="lastname" placeholder="Họ đệm" />
+
+    <input type="text" id="email" name="email" placeholder="Địa chỉ Email" />
+    <input type="text" id="phonenumber" name="phonenumber" placeholder="SĐT" />
+
+    <label class="note-text">Chọn thành phố</label>
+    <select id="idselect">
+        <option value="" disabled selected>Tỉnh</option>
+        <option value="Hanoi">Hà Nội</option>
+        <option value="HaiDuong">Hải Dương</option>
+        <option value="HaiPhong">Hải Phòng</option>
+    </select>
+
+    <textarea id="note" rows="10" placeholder="Ghi chú"></textarea>
+
+    <input type="submit" class="btn" id="btndangki" value="Đăng ký" />
+</form>
+
+    </div>
+
+
+</body>
+<!--------------------------------title_here-------------------------------------->
+<script>
+    document.getElementById("formdangki").onsubmit = function (event) {
+        event.preventDefault();
+
+        var firstname = document.getElementById("firstname").value.trim();
+        var lastname = document.getElementById("lastname").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var phonenumber = document.getElementById("phonenumber").value.trim();
+
+        var citySelect = document.getElementById("idselect");
+        var cityValue = citySelect.value; 
+        var cityText = citySelect.options[citySelect.selectedIndex].text;
+
+        var note = document.getElementById("note").value.trim();
+
+        if (firstname === "" || lastname === "" || email === "" || phonenumber === "" || cityValue === "") {
+            alert("Vui lòng điền đầy đủ thông tin bắt buộc.");
+            return;
+        }
+
+        console.log("thông tin đã nhập");
+        console.log("Tên: " + firstname);
+        console.log("Họ đệm: " + lastname);
+        console.log("Email: " + email);
+        console.log("SĐT: " + phonenumber);
+        console.log("Thành phố (text):", cityText);
+        console.log("Ghi chú: " + note);
+    };
+</script>
+
+<!-------------------------------------------------------------------------------->
+
+
+</html>
