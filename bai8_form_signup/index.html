@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dang nhap</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div class="container">
+        <h2>Đăng Nhập</h2>
+        <form>
+            <div>
+                <label for="username">Tên đăng nhập:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Mật khẩu:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div id="divbtn">
+                <button type="submit" id="btn">Đăng Nhập</button>
+                <p id="message"></p>
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    const btn = document.getElementById('btn');
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const message = document.getElementById('message');
+
+    btn.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        if (username.value.trim() === '' || password.value.trim() === '') {
+            message.textContent = 'Vui lòng điền đầy đủ thông tin đăng nhập.';
+            message.style.color = 'red';
+        } else {
+            message.textContent = 'Đăng nhập thành công!';
+            message.style.color = 'lime';
+            console.log('Tên đăng nhập:', username.value);
+            console.log('Mật khẩu:', password.value);
+        }
+    });
+</script>
+</html>
